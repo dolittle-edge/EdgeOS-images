@@ -10,5 +10,5 @@
                                { "disk" : "image.img", "partition" : 3, "mount" : "/" } ],
     "Version": "latest",
     "Bundles": ["kernel-native", "os-core", "os-core-update", "clr-installer"],
-    "PostNonChroot": ["post-non-chroot.sh"]
+    "PostNonChroot": ["./post-non-chroot.sh"]
 }
