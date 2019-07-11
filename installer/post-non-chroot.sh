@@ -51,7 +51,11 @@ mkdir -p ${CHROOTPATH}/etc
 
 echo 'dolittle-edge-live' > ${CHROOTPATH}/etc/hostname
 
-cat ${CHROOTPATH}/usr/share/defaults/etc/issue > ${CHROOTPATH}/etc/issue
+if [ -f "${CHROOTPATH}/usr/share/defaults/etc/issue" ]; then
+  cat ${CHROOTPATH}/usr/share/defaults/etc/issue > ${CHROOTPATH}/etc/issue
+else
+  touch ${CHROOTPATH}/etc/issue
+fi
 cat >>${CHROOTPATH}/etc/issue <<'EOL'
 
   Welcome to the Dolittle Edge Linux installer. To start the installation process, please run 'clr-installer' and follow the tutorial.
